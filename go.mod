@@ -1,4 +1,4 @@
-module sliset
+module github.com/chensanle/sliset
 
 go 1.18
 
