@@ -10,7 +10,7 @@ sliset: a series basic set operations for slice type
 Standard  `go get`:
 
 ```
-$  go get -v -u github.com/chensanle/slices
+$  go get -v -u github.com/chensanle/sliset
 ```
 
 ## Usage & Example
