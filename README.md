@@ -2,6 +2,7 @@ sliset: a series basic set operations for slice type
 ===
 [![Doc of Sliset][4]][3]
 [![Go Report Card][2]][1]
+[![Codecov][6]][5]
 
 基于泛型的 slice 集合操作，封装常见的 union、interaction 和 difference 等。
 
@@ -55,3 +56,5 @@ fmt.Println("res=", r2)
 [3]: <https://pkg.go.dev/github.com/chensanle/sliset?tab=doc> "Doc of Sliset Link"
 [4]: <https://img.shields.io/badge/go.dev-doc-007d9c?style=flat-square&logo=read-the-docs> "Doc of Sliset Badge"
 
+[5]: <https://codecov.io/gh/chensanle/sliset> "Codecov Link"
+[6]: <https://codecov.io/gh/chensanle/sliset/branch/main/graph/badge.svg?token=BAR2JNMTUJ> "Codecov Badge"

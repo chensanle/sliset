@@ -4,5 +4,6 @@
 *.dll
 *.so
 *.dylib
+codecov
 
 .idea
