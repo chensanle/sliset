@@ -32,22 +32,22 @@ func Uniq(base []E1) []E1
 ###  example 1:  Difference()
 ```go
 r1 := sliset.Difference([]string{"apple", "fb", "ali"}, []string{"apple"})
-fmt.Println("res=", r1)
+fmt.Println("output: ", r1)
 // output: []string{"ali"}
 
 r2 := sliset.Difference([]string{1949, 1997, 2008}, []string{2008})
-fmt.Println("res=", r2)
+fmt.Println("output: ", r2)
 // output: []string{1949, 1997}
 ```
 
 ###  example 2:  Uniq()
 ```go
-r1 := sliset.Difference([]string{"apple", "fb", "ali", "apple"}, []string{"apple"})
-fmt.Println("res=", r1)
+r1 := sliset.Difference([]string{"apple", "fb", "ali", "apple"})
+fmt.Println("output: ", r1)
 // output: []string{"apple", "fb", "ali"} 
 
-r2 := sliset.Difference([]string{1949, 1997, 2008}, []string{2008})
-fmt.Println("res=", r2)
+r2 := sliset.Difference([]string{1949, 1997, 2008})
+fmt.Println("output: ", r2)
 // output: []string{1949, 1997, 2008}
 ```
 
