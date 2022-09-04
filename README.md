@@ -1,6 +1,7 @@
 sliset: a series basic set operations for slice type
 ===
 <a title="Doc for ants" target="_blank" href="https://pkg.go.dev/github.com/chensanle/sliset?tab=doc"><img src="https://img.shields.io/badge/go.dev-doc-007d9c?style=flat-square&logo=read-the-docs" /></a>
+[![Go Report Card](https://goreportcard.com/badge/github.com/chensanle/sliset)](https://goreportcard.com/report/github.com/chensanle/sliset)
 
 基于泛型的 slice 集合操作，封装常见的 union、interaction 和 difference 等。
 
