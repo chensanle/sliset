@@ -102,7 +102,7 @@ func Discard[E1 Int | Float | string](base []E1, elem E1) []E1 {
 	return Uniq(res)
 }
 
-// S2Set turn slice to map. no used map[E1]struct{} to save memory because
+// S2Set turn slice to set. no used map[E1]struct{} to save memory because
 // the bool may reduce the program's complexity.
 func S2Set[E1 Int | Float | string](base []E1) map[E1]bool {
 	m := make(map[E1]bool)
@@ -111,3 +111,47 @@ func S2Set[E1 Int | Float | string](base []E1) map[E1]bool {
 	}
 	return m
 }
+
+// S2Map turn slice to map, the key is custom by getKey()
+func S2Map[E1 any, E2 comparable](base []E1, getKey func(E1) E2) map[E2]E1 {
+	m := make(map[E2]E1)
+	for i, val := range base {
+		m[getKey(val)] = base[i]
+	}
+
+	return m
+}
+
+func Copy[E1 Int | Float | string](base []E1) []E1 {
+	res := make([]E1, len(base))
+
+	for i, _ := range base {
+		res[i] = base[i]
+	}
+	return res
+}
+
+// Discard
+
+// IsDisJoint 判断两个集合是否包含相同元素
+func IsDisJoint[E1 Int | Float | string](base, compared []E1) bool {
+	if len(base) <= 0 || len(compared) <= 0 {
+		return false
+	}
+	comparedSet := S2Set(compared)
+	for _, val := range base {
+		if comparedSet[val] {
+			return true
+		}
+	}
+	return false
+}
+
+// IsSubset Is the compared slice a sub set of base
+//func IsSubset[E1 Int | Float | string](base, compared []E1) bool {
+//	return false
+//}
+//
+//func Remove[E1 Int | Float | string](base []E1, elem E1) int {
+//	return 0
+//}
