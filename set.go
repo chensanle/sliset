@@ -122,6 +122,14 @@ func S2Map[E1 any, E2 comparable](base []E1, getKey func(E1) E2) map[E2]E1 {
 	return m
 }
 
+func List[E1 any, E2 any](base []E1, getValue func(E1) E2) []E2 {
+	r := make([]E2, len(base))
+	for i, val := range base {
+		r[i] = getValue(val)
+	}
+	return r
+}
+
 func Copy[E1 Int | Float | string](base []E1) []E1 {
 	res := make([]E1, len(base))
 

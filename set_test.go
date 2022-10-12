@@ -232,3 +232,18 @@ func TestIsDisJoint(t *testing.T) {
 		})
 	}
 }
+
+func TestList(t *testing.T) {
+	type user struct {
+		Uid      int
+		Nickname string
+	}
+
+	userList := make([]*user, 0)
+	userList = []*user{{Uid: 1, Nickname: "jack"}, {Uid: 2, Nickname: "perri"}}
+
+	m := List(userList, func(user *user) int { return user.Uid })
+	for val := range m {
+		t.Log(val)
+	}
+}
