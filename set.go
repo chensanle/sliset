@@ -122,7 +122,12 @@ func S2Map[E1 any, E2 comparable](base []E1, getKey func(E1) E2) map[E2]E1 {
 	return m
 }
 
+// Deprecated: use Projection() instead
 func List[E1 any, E2 any](base []E1, getValue func(E1) E2) []E2 {
+	return Projection(base, getValue)
+}
+
+func Projection[E1 any, E2 any](base []E1, getValue func(E1) E2) []E2 {
 	r := make([]E2, len(base))
 	for i, val := range base {
 		r[i] = getValue(val)
@@ -138,8 +143,6 @@ func Copy[E1 Int | Float | string](base []E1) []E1 {
 	}
 	return res
 }
-
-// Discard
 
 // IsDisJoint 判断两个集合是否包含相同元素
 func IsDisJoint[E1 Int | Float | string](base, compared []E1) bool {
@@ -158,8 +161,4 @@ func IsDisJoint[E1 Int | Float | string](base, compared []E1) bool {
 // IsSubset Is the compared slice a sub set of base
 //func IsSubset[E1 Int | Float | string](base, compared []E1) bool {
 //	return false
-//}
-//
-//func Remove[E1 Int | Float | string](base []E1, elem E1) int {
-//	return 0
 //}
