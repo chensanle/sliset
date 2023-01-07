@@ -24,6 +24,9 @@ func Difference[E1 Int | Float | string](base, compared []E1) []E1 {
 	if len(base) <= 0 {
 		return make([]E1, 0)
 	}
+
+	// 倘若 compared.len == 0, 也应当响应一个 base 的备份，而不是返回原数组
+
 	comparedSet := S2Set(compared)
 
 	newRes := make([]E1, 0)
@@ -77,7 +80,7 @@ func Uniq[E1 Int | Float | string](base []E1) []E1 {
 	}
 
 	res := make([]E1, 0)
-	cache := make(map[E1]struct{})
+	cache := make(map[E1]struct{}, len(base))
 
 	for _, val := range base {
 		if _, ok := cache[val]; ok {

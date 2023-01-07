@@ -76,6 +76,20 @@ func TestUniq(t *testing.T) {
 	}
 }
 
+func BenchmarkUniq(b *testing.B) {
+	slice1, slice2 := make([]int, 0), make([]int, 0)
+	for i := 0; i < 1000; i++ {
+		slice1 = append(slice1, i)
+		slice2 = append(slice2, i%10)
+	}
+	b.Log(slice1, slice2)
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		Uniq(slice1)
+		//Uniq(slice2)
+	}
+}
+
 func TestUnion(t *testing.T) {
 	type args struct {
 		base     []int
