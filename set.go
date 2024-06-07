@@ -15,7 +15,7 @@ func Contains[E1 Int | Float | string](base []E1, elem E1) bool {
 
 // Index returns the index of the first occurrence of elem in base,
 // or -1 if not present.
-func Index[E1 Int | Float | string](base []E1, elem E1) int {
+func Index[E1 Int | Float | ~string](base []E1, elem E1) int {
 	return slices.Index(base, elem)
 }
 
