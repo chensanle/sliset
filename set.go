@@ -6,7 +6,7 @@ import (
 
 // Contains returns the result of elem whether exists in base,
 // if existed, return true, or false.
-func Contains[E1 Int | Float | string](base []E1, elem E1) bool {
+func Contains[E1 Int | Float | ~string](base []E1, elem E1) bool {
 	if Index(base, elem) >= 0 {
 		return true
 	}
@@ -20,7 +20,7 @@ func Index[E1 Int | Float | ~string](base []E1, elem E1) int {
 }
 
 // Difference res = base - compared
-func Difference[E1 Int | Float | string](base, compared []E1) []E1 {
+func Difference[E1 Int | Float | ~string](base, compared []E1) []E1 {
 	if len(base) <= 0 {
 		return make([]E1, 0)
 	}
@@ -74,7 +74,7 @@ func Union[E1 Int | Float | string](base, compared []E1) []E1 {
 }
 
 // Uniq remove duplicate elements from the base.
-func Uniq[E1 Int | Float | string](base []E1) []E1 {
+func Uniq[E1 Int | Float | ~string](base []E1) []E1 {
 	if len(base) <= 0 {
 		return make([]E1, 0)
 	}
@@ -107,7 +107,7 @@ func Discard[E1 Int | Float | string](base []E1, elem E1) []E1 {
 
 // S2Set turn slice to set. no used map[E1]struct{} to save memory because
 // the bool may reduce the program's complexity.
-func S2Set[E1 Int | Float | string](base []E1) map[E1]bool {
+func S2Set[E1 Int | Float | ~string](base []E1) map[E1]bool {
 	m := make(map[E1]bool)
 	for _, val := range base {
 		m[val] = true
