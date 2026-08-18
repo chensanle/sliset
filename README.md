@@ -1,3 +1,5 @@
+
+
 sliset: a series basic set operations for slice type
 ===
 [![Doc of Sliset][4]][3]
@@ -5,7 +7,7 @@ sliset: a series basic set operations for slice type
 [![Codecov][6]][5]
 [![golang-lint][8]][7]
 
-基于泛型的 slice 伪集合操作，封装常见的 union、interaction 和 difference 等函数。
+基于泛型的 slice 伪集合操作，封装常见的 union、intersection 和 difference 等函数。
 
 ## Installation
 
